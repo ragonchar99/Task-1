@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class Util {
     // реализуйте настройку соеденения с БД
-    public static Connection getConnection()  {
+    public static Connection getConnection() {
         try {
             String url = "jdbc:postgresql://localhost/dbtest";
             Properties props = new Properties();
@@ -20,9 +20,6 @@ public class Util {
         } catch (SQLException e) {
             throw new RuntimeException();
         }
-
-
-
     }
 
 

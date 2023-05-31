@@ -11,21 +11,21 @@ public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
 
-        UserService table = new UserServiceImpl(new UserDaoJDBCImpl());
-        table.createUsersTable();
+        UserService userService = new UserServiceImpl(new UserDaoJDBCImpl());
+        userService.createUsersTable();
 
-        table.saveUser("Roman", "Gonchar", (byte) 23);
-        table.saveUser("Sergey", "Sitnikov", (byte) 23);
-        table.saveUser("Kirill", "Lukashin", (byte) 22);
-        table.saveUser("Ivan", "Gonchar", (byte) 15);
+        userService.saveUser("Roman", "Gonchar", (byte) 23);
+        userService.saveUser("Sergey", "Sitnikov", (byte) 23);
+        userService.saveUser("Kirill", "Lukashin", (byte) 22);
+        userService.saveUser("Ivan", "Gonchar", (byte) 15);
 
-        List<User> list = table.getAllUsers();
+        List<User> list = userService.getAllUsers();
         for (User user : list) {
             System.out.println(user);
         }
 
-        table.removeUserById(3);
-        table.cleanUsersTable();
-        table.dropUsersTable();
+        userService.removeUserById(3);
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
