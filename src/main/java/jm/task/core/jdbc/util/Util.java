@@ -18,9 +18,11 @@ public class Util {
             return DriverManager.getConnection(url, props);
 
         } catch (SQLException e) {
-            throw new RuntimeException();
+            System.out.println(e.getMessage());
         }
+        return null;
     }
+
 
 
 }
